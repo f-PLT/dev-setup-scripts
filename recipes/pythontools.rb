@@ -2,6 +2,7 @@ package 'python3'
 package 'python3-pip'
 package 'pylint3'
 package 'idle3'
+package 'virtualenv'
 
 execute "install pip virtual environment" do
     command "sudo pip3 install virtualenv"
