@@ -16,11 +16,11 @@
 
 # System update
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 # Install base packages
-sudo apt-get install git
-sudo apt-get install curl
+sudo apt-get install git -y
+sudo apt-get install curl -y
 
 ### Installing Chef and folder setup ###
 
@@ -37,7 +37,7 @@ rm -rf chef-workstation_0.8.7-1_amd64.deb
 ### Let's cook! ###
 
 # Fetch repo
-git clone git@gitlab.com:f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
+git clone https://gitlab.com/f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
 
 # Run cookbook
 # Here, you can also run all the recipes, like say:
