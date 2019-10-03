@@ -41,5 +41,5 @@ git clone git@gitlab.com:f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
 
 # Run cookbook
 # Here, you can also run all the recipes, like say:
-# (cd chef-home && sudo chef-client -z -o  dev-setup)
-(cd chef-home && sudo chef-client -z -o  dev-setup::basictools)
+# (cd ~/chef-home && sudo chef-client -z -o  dev-setup)
+(cd ~/chef-home && sudo chef-client -z -o  dev-setup::basictools)
