@@ -41,6 +41,6 @@ Chef is an open source tool and is a very powerful provisionning and configurati
 
 To learn more about Chef :
 
-[What is Chef](https://www.chef.sh)
-[Learning Chef](https://learn.chef.io/#/)
+- [What is Chef](https://www.chef.sh)
+- [Learning Chef](https://learn.chef.io/#/)
 
