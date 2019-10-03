@@ -33,7 +33,7 @@ you can run the recipes with this command, from the chef folder root:
 
 If you need to setup your own Chef instance before hand, you can use the script `chefworkstation-install.sh` before hand.
 
-The script `install.sh` is an all-included setup script. By default, it will only install the `basictools` recipe and is to be customized for each dev environment.
+The script `install.sh` is an all-included setup script. By default, it will only install the `basictools` recipe and is to be customized for each dev environment by choosing wich recipe to run. It can be downloaded by itself and will take care of everything.
 
 ## More about Chef
 
