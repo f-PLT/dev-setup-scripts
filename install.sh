@@ -37,7 +37,7 @@ rm -rf chef-workstation_0.8.7-1_amd64.deb
 ### Let's cook! ###
 
 # Fetch repo
-git@gitlab.com:f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
+git clone git@gitlab.com:f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
 
 # Run cookbook
 # Here, you can also run all the recipes, like say:
