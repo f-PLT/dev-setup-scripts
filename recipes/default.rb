@@ -8,3 +8,7 @@ include_recipe '::basictools'
 include_recipe '::ctools'
 include_recipe '::pythontools'
 include_recipe '::webtools'
+include_recipe '::dockertools'
+include_recipe '::ubuntutools'
+
+
