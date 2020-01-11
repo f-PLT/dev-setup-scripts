@@ -2,16 +2,22 @@ apt_repository 'php' do
     uri 'ppa:ondrej/php'
 end
 
-package 'php7.3'
-package 'php7.3-xdebug'
+package 'php7.4'
+package 'php7.4-xdebug'
 package 'php-cgi'
 package 'php-sqlite3'
 
-execute "add Node v10 LTS to package manager" do
-    command "curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -"
+execute "fetch nvm" do
+    command "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash"
 end
 
-package 'nodejs'
+execute "install nvm stable" do
+    command "nvm install stable &"
+end
+
+execute "set nvm stable" do
+    command "nvm use stable &"
+end
 
 execute "add Yarn public key" do
     command "curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -"
@@ -37,3 +43,6 @@ execute "install Phpstorm via snap store" do
     command "sudo snap install phpstorm --classic"
 end
 
+execute "install Webstorm via snap store" do
+    command "sudo snap install webstorm --classic"
+end
