@@ -1,0 +1,100 @@
+" Vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+    " Basic installation
+    Plug 'tpope/vim-sensible'
+
+    " Comment/uncomment lines
+    Plug 'tpope/vim-commentary'
+
+    " Startify (recent files)
+    Plug 'mhinz/vim-startify'
+
+    " Shortcuts
+    Plug 'tpope/vim-unimpaired'
+
+    " Drawing tables
+    Plug 'vim-scripts/DrawIt'
+
+    " Syntastic
+    Plug 'scrooloose/syntastic'
+
+    " Snippets
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
+    " Nit
+    Plug '~/Applications/nit/misc/vim'
+
+    " Godot
+    Plug 'quabug/vim-gdscript'
+    
+    "NerdTree
+    Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+"NERDTree toggle
+map <C-n> :NERDTreeToggle<CR>
+" Syntax highlighting
+syntax on
+
+set encoding=utf-8
+
+" Commentaries
+nmap <space>c <Plug>CommentaryLine
+xmap <space>c <Plug>Commentary
+
+" Colorscheme
+colorscheme apprentice
+" Source the vimrc file after saving it
+augroup vimrc
+    au!
+    au bufwritepost ~/.vim/vimrc source $MYVIMRC
+augroup END
+
+" Line numbers
+set number                     " Show current line number
+set relativenumber             " Show relative line numbers
+
+" Replace tab by spaces
+set tabstop=4 | set shiftwidth=4 | set expandtab
+autocmd filetype tex set tabstop=2 | set shiftwidth=2
+autocmd FileType make setlocal noexpandtab
+
+" More than 80 characters
+augroup collumnLimit
+  autocmd!
+  autocmd BufEnter,WinEnter,FileType cpp
+        \ highlight CollumnLimit ctermbg=Red guibg=Red
+  let collumnLimit = 79 " feel free to customize
+  let pattern =
+        \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
+  autocmd BufEnter,WinEnter,FileType cpp
+        \ let w:m1=matchadd('CollumnLimit', pattern, -1)
+augroup END
+
+" Makefile shortcut
+nmap mm :!make<CR>
+nmap aa :!make all<CR><CR>
+
+" Folding
+set foldmethod=indent   
+set nofoldenable
+
+" CTRL-R to replace selected text
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline=%=[%l    " Current line
+set statusline+=/    " Separator
+set statusline+=%L]\ -   " Total lines
+set statusline+=\ COL:\ %2c
+
+
