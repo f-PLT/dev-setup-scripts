@@ -31,7 +31,7 @@ execute "remove miniconda install files" do
 end
 
 execute "install postgre dependencies for peewee" do
-    command "sudo pip install psycopg2"
+    command "sudo pip3 install psycopg2"
 end
 
 execute "install Pycharm via snap store" do
