@@ -24,6 +24,7 @@ as you respect the MIT license agreement.
 - [ ] Androit App related packages and IDE
 - [x] Bashrc and Vim customization
 - [x] Ubuntu environment customization
+- [x] Docker and Docker-compose
 
 ## How to
 
