@@ -4,9 +4,15 @@
 
 This cookbook is used to setup my dev environment.
 
-I use Jetbrains IDEs, and their installation is included in the corresponding recipes. ex: CLion is installed by `ctools.rb`
+It is meant for a first install, not constant provisionning, so some problems
+can occur if trying to run multiple times on the same system.
 
-This project is built and maintained for my own personnal needs and learning experience. You are free to clone it and adapt it for your own needs as long as you respect the MIT license agreement.
+I use Jetbrains IDEs, and their installation is included in the corresponding 
+recipes. ex: CLion is installed by `ctools.rb`
+
+This project is built and maintained for my own personnal needs and learning 
+experience. You are free to clone it and adapt it for your own needs as long 
+as you respect the MIT license agreement.
 
 ## Project outline
 
@@ -16,8 +22,8 @@ This project is built and maintained for my own personnal needs and learning exp
 - [x] Basic web related packages and IDE
 - [ ] React-native configuration
 - [ ] Androit App related packages and IDE
-- [ ] Bashrc and Vim customization
-- [ ] Ubuntu environment customization
+- [x] Bashrc and Vim customization
+- [x] Ubuntu environment customization
 
 ## How to
 
@@ -31,13 +37,19 @@ you can run the recipes with this command, from the chef folder root:
     ex.
     sudo chef-client -z -o dev-setup::basictools
 
-If you need to setup your own Chef instance before hand, you can use the script `chefworkstation-install.sh` before hand.
+If you need to setup your own Chef instance before hand, you can use the 
+script `chefworkstation-install.sh` before hand.
 
-The script `install.sh` is an all-included setup script. By default, it will only install the `basictools` recipe and is to be customized for each dev environment by choosing wich recipe to run. It can be downloaded by itself and will take care of everything.
+The script `install.sh` is an all-included setup script. By default, it will 
+only install the `basictools` recipe and is to be customized for each dev 
+environment by choosing wich recipe to run. It can be downloaded by itself 
+and will take care of everything.
 
 ## More about Chef
 
-Chef is an open source tool and is a very powerful provisionning and configuration management tool. This project barely scratches the surface of what it can do.
+Chef is an open source tool and is a very powerful provisionning and 
+configuration management tool. This project barely scratches the surface 
+of what it can do.
 
 To learn more about Chef :
 
