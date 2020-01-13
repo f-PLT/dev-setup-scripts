@@ -12,9 +12,7 @@ execute "add Docker to package manager" do
     command "sudo add-apt-repository \"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\""
 end
 
-execute "apt update" do
-    command "sudo apt update"
-end
+apt_update
 
 package 'docker-ce'
 package 'docker-ce-cli'

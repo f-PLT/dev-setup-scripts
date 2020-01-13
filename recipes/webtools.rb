@@ -1,3 +1,6 @@
+# If installing as standalone, consider also running the
+# webtools_config. script 
+
 apt_repository 'php' do
     uri 'ppa:ondrej/php'
 end
