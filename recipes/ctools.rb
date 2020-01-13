@@ -1,14 +1,7 @@
-# Adding to repositories
-apt_repository 'bats' do
-    uri 'ppa:duggan/bats'
+# Installing  CLion via snap store
+execute "install C packages" do
+    command "sudo apt-get install libcunit1 libcunit1-dev bats valgrind -y"
 end
-
-# Installing packages
-package libcunit
-package libcunit1-doc
-package libcunit
-package bats
-package valgrind
 
 # Installing  CLion via snap store
 execute "install CLion via snap store" do

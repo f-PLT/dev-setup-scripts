@@ -1,14 +1,28 @@
 package 'gnome-tweaks'
 
-apt_repository 'paper icons' do
-    uri 'ppa:snwh/ppa'
+execute 'add paper icons to repo' do
+    command 'sudo add-apt-repository -u ppa:snwh/ppa'
 end
+
+apt_update
 
 execute 'install paper icons' do
-    command 'sudo apt update && sudo apt install paper-icon-theme'
+    command 'sudo apt-get install paper-icon-theme -y'
 end
 
-execute 'set animations off' do
-    command 'gsettings set org.gnome.desktop.interface enable-animations false'
+execute 'clear previous vimix folder' do
+    command 'sudo rm -rf ~/vimix'
+end
+
+execute 'fetch vimix' do
+    command 'git clone https://github.com/vinceliuice/vimix-gtk-themes.git ~/vimix'
+end
+
+execute 'install vimix' do
+    command '~/vimix/Install'
+end
+
+execute 'remove vimix repo' do
+    command 'sudo rm -rf ~/vimix'
 end
 

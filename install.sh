@@ -37,11 +37,15 @@ rm -rf chef-workstation_0.8.7-1_amd64.deb
 ### Let's cook! ###
 
 # Fetch repo
-git clone https://gitlab.com/f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
+#git clone https://gitlab.com/f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
 
 # Run cookbook
 # Here, you can also run all the recipes, like say:
-# (cd ~/chef-home && sudo chef-client -z -o  dev-setup)
-(cd ~/chef-home && sudo chef-client -z -o  dev-setup::basictools)
+(cd ~/chef-home && sudo chef-client -z -o  dev-setup)
+# (cd ~/chef-home && sudo chef-client -z -o  dev-setup::basictools)
 
 (cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./bash_vim_setup.sh)
+(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./pythontools_config.sh)
+(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./webtools_config.sh)
+
+
