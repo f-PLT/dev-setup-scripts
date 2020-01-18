@@ -1,5 +1,5 @@
 # If installing as standalone, consider also running the
-# pythontools_config. script 
+# pythontools_config.sh script 
 
 package 'python3'
 package 'python3-pip'

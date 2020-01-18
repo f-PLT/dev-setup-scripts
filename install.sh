@@ -60,6 +60,11 @@ git clone https://gitlab.com/f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
 
 # Uncomment the following for dockertools
 #(cd ~/chef-home && sudo chef-client -z -o  dev-setup::dockertools)
+#(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./dockertools_config.sh)
+
+# Uncomment the following for javatools
+#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::javatools)
+#(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./javatools_config.sh)
 
 # Uncomment the following for ctools
 #(cd ~/chef-home && sudo chef-client -z -o  dev-setup::ctools)

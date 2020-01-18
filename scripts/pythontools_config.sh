@@ -6,6 +6,7 @@ pip3 install virtualenv
 pip3 install flask
 pip3 install pytest
 pip3 install psycopg2
+pip3 install --upgrade autopep8
 
 echo 'Checking if miniconda3 exists'
 if [ ! -d "$HOME/miniconda3" ]; then
