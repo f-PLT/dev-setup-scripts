@@ -52,11 +52,11 @@ git clone https://gitlab.com/f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
 
 # Uncomment the following for pythontools
 #(cd ~/chef-home && sudo chef-client -z -o  dev-setup::pythontools)
-#(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./pythontools_config.sh)
+#(cd ~/chef-home/cookbooks/dev-setup/scripts && ./pythontools_config.sh)
 
 # Uncomment the following for webtools
 #(cd ~/chef-home && sudo chef-client -z -o  dev-setup::webtools)
-#(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./webtools_config.sh)
+#(cd ~/chef-home/cookbooks/dev-setup/scripts && ./webtools_config.sh)
 
 # Uncomment the following for dockertools
 #(cd ~/chef-home && sudo chef-client -z -o  dev-setup::dockertools)

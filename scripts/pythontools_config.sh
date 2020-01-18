@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo '*'
+echo '* Python configuration script - STARTING'
+echo '*'
 # Installing basic packages
 echo 'Installing basic pip packages'
 pip3 install virtualenv
@@ -17,4 +20,6 @@ echo 'Fetching and installing miniconda3'
 else
     echo 'miniconda3 exists, consider checking if update is necessary'
 fi
-
+echo '*'
+echo '* Python configuration script - DONE'
+echo '*'

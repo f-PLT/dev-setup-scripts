@@ -20,15 +20,32 @@ as you respect the MIT license agreement.
 - [x] C related packages and IDE
 - [x] Python related packages and IDE
 - [x] Basic web related packages and IDE
-- [ ] React-native configuration
-- [ ] Androit App related packages and IDE
 - [x] Bashrc and Vim customization
 - [x] Ubuntu environment customization
 - [x] Docker and Docker-compose
+- [x] Java with Maven and Gradle
+- [ ] Androit App related packages and IDE
 
 ## How to
 
-The default recipe installs everything.
+### The install script
+
+The script `install.sh` is an all-included setup script. By default, it will 
+only install the `basictools` recipe and is to be customized for each dev 
+environment by choosing wich recipe to run. It can be downloaded by itself 
+and will take care of everything. It runs the Chef recipes as well as 
+configuration scripts that need to run as the current user (not sudo or root).
+
+Therefore, you need to run `ìnstall.sh` as is, without sudo privileges and as 
+the user you intend to use these tools with.
+
+Inspect the install script and comment/uncomment the required parts for your 
+needs(will be converted to arguments eventually).
+
+### The Chef recipes
+
+If you need to setup your own Chef instance before hand, you can use the 
+script `chefworkstation-install.sh` before hand.
 
 Once you have created you chef folder and downloaded this cookbook,
 you can run the recipes with this command, from the chef folder root:
@@ -38,18 +55,11 @@ you can run the recipes with this command, from the chef folder root:
     ex.
     sudo chef-client -z -o dev-setup::basictools
 
-If you need to setup your own Chef instance before hand, you can use the 
-script `chefworkstation-install.sh` before hand.
+The default recipe installs everything.
 
-The script `install.sh` is an all-included setup script. By default, it will 
-only install the `basictools` recipe and is to be customized for each dev 
-environment by choosing wich recipe to run. It can be downloaded by itself 
-and will take care of everything.
-
-For the pythontools and webtools recipes, additional scripts must be run,
-as somethings need to be installed in userspace and Chef runs everything 
-as root. Inspect the install script and comment/uncomment the required
-parts (will be converted to arguments eventually)
+For the pythontools, dockertools and webtools recipes, additional 
+scripts must be run, as somethings need to be installed in userspace and 
+Chef runs everything as root. 
 
 ## More about Chef
 
