@@ -141,3 +141,9 @@ alias pip='pip3'
 alias cp='/bin/cp -i'
 alias mv='/bin/mv -i'
 alias rm='/bin/rm -i'
+
+# keygen alias
+alias keygen='ssh-keygen -t rsa -b 4096 -C'
+
+# History pipe alias
+alias hgrep='history | grep'
