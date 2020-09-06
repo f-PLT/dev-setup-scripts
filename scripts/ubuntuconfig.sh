@@ -8,12 +8,12 @@ echo 'Copying bashrc file to home'
 cp files/bashrc ~/.bashrc
 # vim config
 echo 'Copying apprentice color to vim dir'
-cp files/apprentice.vim /usr/share/vim/vim80/colors
+sudo cp files/apprentice.vim /usr/share/vim/vim80/colors
 echo 'Copying vimrc to home'
 cp files/vimrc ~/.vimrc
 echo 'Configuring Ubuntu theme'
 # Paper Icons
-sudo add-apt-repository -u ppa:snwh/ppa
+sudo add-apt-repository -y -u ppa:snwh/ppa
 sudo apt-get install paper-icon-theme -y
 # Vimix theme
 sudo rm -rf ~/vimix
