@@ -4,12 +4,25 @@ echo '*'
 echo '* Python configuration script - STARTING'
 echo '*'
 # Installing basic packages
+echo 'Installing python packages'
+echo
+sudo apt install \
+python3 \
+python3-pip \
+pylint3 \
+idle3 \
+virtualenv \
+python-dev \
+libpq-dev
+
 echo 'Installing basic pip packages'
-pip3 install virtualenv
-pip3 install flask
-pip3 install pytest
-pip3 install psycopg2
-pip3 install --upgrade autopep8
+pip3 install \
+virtualenv \
+flask \
+pytest \
+flake8 \
+pylint \
+--upgrade autopep8
 
 echo 'Checking if miniconda3 exists'
 if [ ! -d "$HOME/miniconda3" ]; then
@@ -20,6 +33,8 @@ echo 'Fetching and installing miniconda3'
 else
     echo 'miniconda3 exists, consider checking if update is necessary'
 fi
+echo 'Installing Pycharm'
+sudo snap install pycharm-professional --classic
 echo '*'
 echo '* Python configuration script - DONE'
 echo '*'

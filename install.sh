@@ -22,49 +22,26 @@ sudo apt-get upgrade -y
 sudo apt-get install git -y
 sudo apt-get install curl -y
 
-### Installing Chef and folder setup ###
-
-# Download Chef workstation package. Check version before launching
-curl -O https://packages.chef.io/files/stable/chef-workstation/0.8.7/ubuntu/18.04/chef-workstation_0.8.7-1_amd64.deb
-sudo dpkg -i chef-workstation_0.8.7-1_amd64.deb
-
-# Setup chef-home folder
-mkdir -p ~/chef-home/.chef ~/chef-home/cookbooks
-
-# Cleanup
-rm -rf chef-workstation_0.8.7-1_amd64.deb
-
-### Let's cook! ###
-
 # Fetch repo
-git clone https://gitlab.com/f_PLT/dev-setup.git ~/chef-home/cookbooks/dev-setup
+git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
 
-# Run cookbook
-# Here, you can also run all the recipes, like say:
-# (cd ~/chef-home && sudo chef-client -z -o  dev-setup)
-(cd ~/chef-home && sudo chef-client --chef-license accept -z -o  dev-setup::basictools)
-
-# Basic script for bash and vim setup
-(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./bash_vim_setup.sh)
+# Basic tools scripts
+(cd ~/dev-setup/scripts && sudo ./basictools.sh)
 
 # Uncomment the following for ubuntuconfig
-#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::ubuntuconfig)
+#(cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
 
 # Uncomment the following for pythontools
-#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::pythontools)
-#(cd ~/chef-home/cookbooks/dev-setup/scripts && ./pythontools_config.sh)
+#(cd ~/dev-setup/scripts && ./pythontools_config.sh)
 
 # Uncomment the following for webtools
-#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::webtools)
-#(cd ~/chef-home/cookbooks/dev-setup/scripts && ./webtools_config.sh)
+#(cd ~/dev-setup/scripts && ./webtools_config.sh)
 
 # Uncomment the following for dockertools
-#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::dockertools)
-#(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./dockertools_config.sh)
+#(cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
 
 # Uncomment the following for javatools
-#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::javatools)
-#(cd ~/chef-home/cookbooks/dev-setup/scripts && sudo ./javatools_config.sh)
+#(cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
 
 # Uncomment the following for ctools
-#(cd ~/chef-home && sudo chef-client -z -o  dev-setup::ctools)
+#(cd ~/dev-setup/scripts && sudo ./ctools.sh)
