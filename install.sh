@@ -26,7 +26,9 @@ sudo apt-get install curl -y
 git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
 
 # Basic tools scripts
-(cd ~/dev-setup/scripts && sudo ./basictools.sh)
+basictools () {
+    (cd ~/dev-setup/scripts && sudo ./basictools.sh)
+}
 
 # ubuntuconfig
 ubuntu () {
@@ -53,6 +55,7 @@ c () {
     (cd ~/dev-setup/scripts && sudo ./ctools.sh)
 }
 all () {
+    basictools
     ubuntu
     py
     docker
@@ -61,15 +64,35 @@ all () {
     web
 }
 custom () {
+    basictools
     ubuntu
     py
     docker
     web
 }
+list () {
+    echo " List of available configurations:"
+    echo
+    echo "    - ubuntu : Ubuntu and basic system configs"
+    echo "    - python : Python libraries and IDE"
+    echo "    - web    : NVM, Yarn and Web IDE"
+    echo "    - docker : Docker installation and configuration"
+    echo "    - java   : Open JDK, maven, gradle and IDE"
+    echo "    - c      : C libraries and IDE"
+    echo "    - all    : Installs everything"
+    echo "    - custom : Installs custom selection"
+}
+
+if [[ "$@" -eq 0 ]]; then
+    list
+fi
 
 for var in "$@"
 do
     case "$var" in
+        "basictools")
+            basictools
+            ;;
         "ubuntu")
             ubuntu
             ;;
@@ -95,16 +118,7 @@ do
             custom
             ;;
         "list")
-            echo " List of available configurations:"
-            echo
-            echo "    - ubuntu : Ubuntu and basic system configs"
-            echo "    - python : Python libraries and IDE"
-            echo "    - web    : NVM, Yarn and Web IDE"
-            echo "    - docker : Docker installation and configuration"
-            echo "    - java   : Open JDK, maven, gradle and IDE"
-            echo "    - c      : C libraries and IDE"
-            echo "    - all    : Installs everything"
-            echo "    - custom : Installs custom selection"
+            list
             ;;
         *)
             echo "* * * * * * * * * * * * * * * * * * * * * * * * * "
