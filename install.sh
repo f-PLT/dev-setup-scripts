@@ -92,7 +92,8 @@ do
             all
             ;;
         "custom")
-            custom;;
+            custom
+            ;;
         "list")
             echo " List of available configurations:"
             echo
