@@ -104,12 +104,12 @@ do
             echo "    - c      : C libraries and IDE"
             echo "    - all    : Installs everything"
             echo "    - custom : Installs custom selection"
-            exit 0
             ;;
         *)
-            echo "* * * * * * * * * * * * * * * * * * * * * * * * *"
+            echo "* * * * * * * * * * * * * * * * * * * * * * * * * "
             echo "* ""$var"" is not a valid input "
             echo "* Use the list command to see available inputs"
             echo "* * * * * * * * * * * * * * * * * * * * * * * * *"
             exit 1
-esac
+    esac
+done
