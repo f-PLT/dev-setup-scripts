@@ -28,20 +28,88 @@ git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
 # Basic tools scripts
 (cd ~/dev-setup/scripts && sudo ./basictools.sh)
 
-# Uncomment the following for ubuntuconfig
-#(cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
+# ubuntuconfig
+function ubuntu () {
+    (cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
+}
+# pythontools
+function py () {
+    (cd ~/dev-setup/scripts && ./pythontools_config.sh)
+}
+# webtools
+function web () { 
+    (cd ~/dev-setup/scripts && ./webtools_config.sh)
+}
+# dockertools
+function docker () {
+    (cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
+}
+# javatools
+function java () {
+    (cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
+}
+# ctools
+function c () {
+    (cd ~/dev-setup/scripts && sudo ./ctools.sh)
+}
+function all () {
+    ubuntu
+    py
+    docker
+    java
+    c
+    web
+}
+function custom () {
+    ubuntu
+    py
+    docker
+    web
+}
 
-# Uncomment the following for pythontools
-#(cd ~/dev-setup/scripts && ./pythontools_config.sh)
-
-# Uncomment the following for webtools
-#(cd ~/dev-setup/scripts && ./webtools_config.sh)
-
-# Uncomment the following for dockertools
-#(cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
-
-# Uncomment the following for javatools
-#(cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
-
-# Uncomment the following for ctools
-#(cd ~/dev-setup/scripts && sudo ./ctools.sh)
+for var in "$@"
+do
+    case "$var" in
+        "ubuntu")
+            ubuntu
+            ;;
+        "python")
+            py
+            ;;
+        "web")
+            web
+            ;;
+        "docker")
+            docker
+            ;;
+        "java")
+            java
+            ;;
+        "c")
+            c
+            ;;
+        "all")
+            all
+            ;;
+        "custom")
+            custom;;
+        "list")
+            echo " List of available configurations:"
+            echo
+            echo "    - ubuntu : Ubuntu and basic system configs"
+            echo "    - python : Python libraries and IDE"
+            echo "    - web    : NVM, Yarn and Web IDE"
+            echo "    - docker : Docker installation and configuration"
+            echo "    - java   : Open JDK, maven, gradle and IDE"
+            echo "    - c      : C libraries and IDE"
+            echo "    - all    : Installs everything"
+            echo "    - custom : Installs custom selection"
+            exit 0
+            ;;
+        *)
+            echo "* * * * * * * * * * * * * * * * * * * * * * * * *"
+            echo "* ""$var"" is not a valid input "
+            echo "* Use the list command to see available inputs"
+            echo "* * * * * * * * * * * * * * * * * * * * * * * * *"
+            exit 1
+esac
