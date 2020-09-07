@@ -29,30 +29,30 @@ git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
 (cd ~/dev-setup/scripts && sudo ./basictools.sh)
 
 # ubuntuconfig
-function ubuntu () {
+ubuntu () {
     (cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
 }
 # pythontools
-function py () {
+py () {
     (cd ~/dev-setup/scripts && ./pythontools_config.sh)
 }
 # webtools
-function web () { 
+web () { 
     (cd ~/dev-setup/scripts && ./webtools_config.sh)
 }
 # dockertools
-function docker () {
+docker () {
     (cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
 }
 # javatools
-function java () {
+java () {
     (cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
 }
 # ctools
-function c () {
+c () {
     (cd ~/dev-setup/scripts && sudo ./ctools.sh)
 }
-function all () {
+all () {
     ubuntu
     py
     docker
@@ -60,7 +60,7 @@ function all () {
     c
     web
 }
-function custom () {
+custom () {
     ubuntu
     py
     docker
