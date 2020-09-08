@@ -30,16 +30,23 @@ as you respect the MIT license agreement.
 
 ### The install script
 
-The script `install.sh` is an all-included setup script. By default, it will 
-only install the `basictools` script. You can use the command `list` to see 
-the available configurations:
+The script `install.sh` is an all-included setup script. You can use the 
+command `list`, or run the script without arguments to see the available 
+configurations.
+
+If only the `install.sh` script has been downloaded, be sure to run the
+`setup` command first, as it will fetch the required scripts and files.
 
 ```
-$ ./install.sh list
+./install.sh setup
 ```
+
+It is also possible to use more than one command for a personnalized installation:
+
+```
+./install setup basictools python
+```
+
 The `all` command will install everything, and the `custom` command to install
-a selection of what I mostly use on every new install.
-
-
-
-
+a selection of what I mostly use on every new install; basictools, python, 
+docker and web libraries, tools and IDEs, as well as personnalize Ubuntu.

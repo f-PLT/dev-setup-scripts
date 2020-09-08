@@ -84,7 +84,7 @@ list () {
     echo "    - python     : Python libraries and IDE"
     echo "    - setup      : Updates system, fetches repository."
     echo "                   Run this first if you downloaded install.sh file only"
-    echo "    - ubuntu     : Ubuntu and basic system configs"
+    echo "    - ubuntu     : Ubuntu system configs and themes"
     echo "    - web        : NVM, Yarn and Web IDE"
     echo
     echo " Preset installation packages:"
