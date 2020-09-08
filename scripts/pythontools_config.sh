@@ -6,7 +6,7 @@ echo '*'
 # Installing basic packages
 echo 'Installing python packages'
 echo
-sudo apt install \
+sudo apt install -y \
 python3 \
 python3-pip \
 pylint3 \

@@ -6,7 +6,9 @@ sudo apt install -y \
 build-essential \
 software-properties-common \
 terminator \
-vim
+vim \
+curl \
+git
 
 echo 'Installing VS Code'
 sudo snap install code --classic

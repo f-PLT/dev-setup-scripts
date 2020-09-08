@@ -3,7 +3,7 @@
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
-sudo apt install -y gnome-tweaks
+sudo apt install -y gnome-tweaks vim
 echo 'Copying bashrc file to home'
 cp files/bashrc ~/.bashrc
 # vim config
