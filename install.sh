@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author: Francis Pelletier
-# Date  : October 2019
+# Date  : September 2020
 
 # This script is part of this project : https://gitlab.com/f_PLT/dev-setup
 
@@ -9,78 +9,89 @@
 # on a newly installed system, or one meant to become a new 
 # developement environment. Use at your own risks.
 
-# It is recommended that you run this script from your home folder,
-# or inside the folder where you want to have your Chef working folder
-
-### Setting things in to place ###
-
-# System update
-sudo apt-get update
-sudo apt-get upgrade -y
-
-# Install base packages
-sudo apt-get install git -y
-sudo apt-get install curl -y
-
-# Fetch repo
-git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+# Setting things in to place
+setup () {
+    # System update
+    sudo apt-get update
+    sudo apt-get upgrade -y
+    # Fetch repo
+    git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+}
 
 # Basic tools scripts
 basictools () {
     (cd ~/dev-setup/scripts && sudo ./basictools.sh)
 }
 
-# ubuntuconfig
-ubuntu () {
-    (cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
-}
-# pythontools
-py () {
-    (cd ~/dev-setup/scripts && ./pythontools_config.sh)
-}
-# webtools
-web () { 
-    (cd ~/dev-setup/scripts && ./webtools_config.sh)
-}
-# dockertools
-docker () {
-    (cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
-}
-# javatools
-java () {
-    (cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
-}
 # ctools
 c () {
     (cd ~/dev-setup/scripts && sudo ./ctools.sh)
 }
+
+# dockertools
+docker () {
+    (cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
+}
+
+# javatools
+java () {
+    (cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
+}
+
+# pythontools
+python () {
+    (cd ~/dev-setup/scripts && ./pythontools_config.sh)
+}
+
+# ubuntuconfig
+ubuntu () {
+    (cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
+}
+
+# webtools
+web () { 
+    (cd ~/dev-setup/scripts && ./webtools_config.sh)
+}
+
+# Preset installations
 all () {
+    setup
     basictools
     ubuntu
-    py
+    python
     docker
     java
     c
     web
 }
+
 custom () {
+    setup
     basictools
     ubuntu
-    py
+    python
     docker
     web
 }
+
 list () {
     echo " List of available configurations:"
     echo
-    echo "    - ubuntu : Ubuntu and basic system configs"
-    echo "    - python : Python libraries and IDE"
-    echo "    - web    : NVM, Yarn and Web IDE"
-    echo "    - docker : Docker installation and configuration"
-    echo "    - java   : Open JDK, maven, gradle and IDE"
-    echo "    - c      : C libraries and IDE"
-    echo "    - all    : Installs everything"
-    echo "    - custom : Installs custom selection"
+    echo "    - basictools : Basic packages and VS code"
+    echo "    - c          : C libraries and IDE"
+    echo "    - docker     : Docker installation and configuration"
+    echo "    - java       : Open JDK, maven, gradle and IDE"
+    echo "    - python     : Python libraries and IDE"
+    echo "    - setup      : Updates system, fetches repository."
+    echo "                   Run this first if you downloaded install.sh file only"
+    echo "    - ubuntu     : Ubuntu and basic system configs"
+    echo "    - web        : NVM, Yarn and Web IDE"
+    echo
+    echo " Preset installation packages:"
+    echo
+    echo "    - all        : Installs everything"
+    echo "    - custom     : Installs custom selection:"
+    echo "                   bacistools, docker, python, ubuntu and web."
 }
 
 if [[ "$@" -eq 0 ]]; then
@@ -89,7 +100,17 @@ fi
 
 for var in "$@"
 do
+    # Order is set according to use, not alphabetical order
     case "$var" in
+        "list")
+            list
+            ;;
+        "custom")
+            custom
+            ;;
+        "setup")
+            setup
+            ;;
         "basictools")
             basictools
             ;;
@@ -97,7 +118,7 @@ do
             ubuntu
             ;;
         "python")
-            py
+            python
             ;;
         "web")
             web
@@ -113,12 +134,6 @@ do
             ;;
         "all")
             all
-            ;;
-        "custom")
-            custom
-            ;;
-        "list")
-            list
             ;;
         *)
             echo "* * * * * * * * * * * * * * * * * * * * * * * * * "
