@@ -14,6 +14,7 @@ setup () {
     # System update
     sudo apt-get update
     sudo apt-get upgrade -y
+    sudo apt-get install git
     # Fetch repo
     git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
 }
@@ -94,7 +95,7 @@ list () {
     echo "                   bacistools, docker, python, ubuntu and web."
 }
 
-if [[ "$@" -eq 0 ]]; then
+if [[ "$#" -eq 0 ]]; then
     list
 fi
 
