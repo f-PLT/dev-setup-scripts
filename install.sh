@@ -9,19 +9,19 @@
 # on a newly installed system, or one meant to become a new 
 # developement environment. Use at your own risks.
 
+# Basic tools scripts
+basictools () {
+    (cd ~/dev-setup/scripts && sudo ./basictools.sh)
+}
+
 # Setting things in to place
 setup () {
     # System update
     sudo apt-get update
     sudo apt-get upgrade -y
-    sudo apt-get install git -y
+    basictools
     # Fetch repo
     git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
-}
-
-# Basic tools scripts
-basictools () {
-    (cd ~/dev-setup/scripts && sudo ./basictools.sh)
 }
 
 # ctools
@@ -57,7 +57,6 @@ web () {
 # Preset installations
 all () {
     setup
-    basictools
     ubuntu
     python
     docker
@@ -68,7 +67,6 @@ all () {
 
 custom () {
     setup
-    basictools
     ubuntu
     python
     docker
