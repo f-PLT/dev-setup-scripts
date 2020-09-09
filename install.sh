@@ -14,7 +14,7 @@ setup () {
     # System update
     sudo apt-get update
     sudo apt-get upgrade -y
-    sudo apt-get install git
+    sudo apt-get install git -y
     # Fetch repo
     git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
 }
