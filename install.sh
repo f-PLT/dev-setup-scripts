@@ -14,16 +14,6 @@ basictools () {
     (cd ~/dev-setup/scripts && sudo ./basictools.sh)
 }
 
-# Setting things in to place
-setup () {
-    # System update
-    sudo apt-get update
-    sudo apt-get upgrade -y
-    basictools
-    # Fetch repo
-    git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
-}
-
 # ctools
 c () {
     (cd ~/dev-setup/scripts && sudo ./ctools.sh)
@@ -44,6 +34,16 @@ python () {
     (cd ~/dev-setup/scripts && ./pythontools_config.sh)
 }
 
+# Setting things in to place
+setup () {
+    # System update
+    sudo apt-get update
+    sudo apt-get upgrade -y
+    sudo apt-get install git -y
+    # Fetch repo
+    git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+}
+
 # ubuntuconfig
 ubuntu () {
     (cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
@@ -57,6 +57,7 @@ web () {
 # Preset installations
 all () {
     setup
+    basictools
     ubuntu
     python
     docker
@@ -67,6 +68,7 @@ all () {
 
 custom () {
     setup
+    basictools
     ubuntu
     python
     docker
