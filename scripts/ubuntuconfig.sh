@@ -7,8 +7,6 @@ sudo apt install -y gnome-tweaks vim
 echo 'Copying bashrc file to home'
 cp files/bashrc ~/.bashrc
 # vim config
-echo 'Copying apprentice color to vim dir'
-sudo cp files/apprentice.vim /usr/share/vim/vim80/colors
 echo 'Copying vimrc to home'
 cp files/vimrc ~/.vimrc
 echo 'Configuring Ubuntu theme'

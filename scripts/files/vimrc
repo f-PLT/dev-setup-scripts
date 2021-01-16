@@ -50,7 +50,7 @@ nmap <space>c <Plug>CommentaryLine
 xmap <space>c <Plug>Commentary
 
 " Colorscheme
-colorscheme apprentice
+colorscheme slate
 " Source the vimrc file after saving it
 augroup vimrc
     au!

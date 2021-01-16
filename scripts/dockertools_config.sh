@@ -19,8 +19,10 @@ echo 'Installing docker-compose'
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 echo 'Adding current user to docker group and'
-echo 'change of permissions for docker-compose'
+sudo groupadd docker
 sudo usermod -aG docker $USER
+newgrp docker 
+echo 'change of permissions for docker-compose'
 sudo chmod +x /usr/local/bin/docker-compose
 echo '*'
 echo '* Docker configuration script - DONE'
