@@ -33,8 +33,7 @@ echo 'Fetching and installing miniconda3'
 else
     echo 'miniconda3 exists, consider checking if update is necessary'
 fi
-echo 'Installing Pycharm'
-sudo snap install pycharm-professional --classic
+
 echo '*'
 echo '* Python configuration script - DONE'
 echo '*'
