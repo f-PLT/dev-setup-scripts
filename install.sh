@@ -53,6 +53,8 @@ setup () {
     if [ ! -d "$HOME/dev-setup" ]
         then
             git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+    else
+        (cd ~/dev-setup && git pull)
     fi
 }
 
