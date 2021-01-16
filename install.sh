@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Author: Francis Pelletier
 # Date  : January 2021
 
@@ -9,7 +8,7 @@
 # on a newly installed system, or one meant to become a new 
 # developement environment.
 #
-# Tested with Ubuntu 18.04 and 20.04, as well a Vagrant installs.
+# Tested with Ubuntu 18.04 and 20.04, as well a Vagrant
 #
 # Use at your own risks.
 
