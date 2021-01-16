@@ -1,13 +1,17 @@
 #!/bin/bash
 
 # Author: Francis Pelletier
-# Date  : September 2020
+# Date  : January 2021
 
 # This script is part of this project : https://gitlab.com/f_PLT/dev-setup
 
 # This script will configure everything. It is meant to be run
 # on a newly installed system, or one meant to become a new 
-# developement environment. Use at your own risks.
+# developement environment.
+#
+# Tested with Ubuntu 18.04 and 20.04, as well a Vagrant installs.
+#
+# Use at your own risks.
 
 # Basic tools scripts
 basictools () {

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!"bin/bash
 
 # User and group permissions to run docker and
 # docker-compose without sudo

@@ -1,3 +1,4 @@
+#!"bin/bash
 echo '*'
 echo '* Basictools configuration script - STARTING'
 echo '*'
@@ -9,7 +10,8 @@ terminator \
 vim
 
 echo 'Copying vimrc to home'
-if [ $USER == "vagrant" ]
+# If using with vagrant, user is "root" when running the script, so:
+if [ $USER == "root" ]
 then
     cp files/vimrc /home/vagrant/.vimrc
 else

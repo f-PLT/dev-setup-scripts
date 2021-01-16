@@ -1,3 +1,4 @@
+#!"bin/bash
 echo '*'
 echo '* C configuration script - STARTING'
 echo '*'

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!"bin/bash
 echo '*'
 echo '* Webb tools configuration script - STARTING'
 echo '*'

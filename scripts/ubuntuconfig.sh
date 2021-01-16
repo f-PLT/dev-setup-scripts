@@ -1,13 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 # bashrc config
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
 sudo apt install -y gnome-tweaks
 echo 'Copying bashrc file to home'
-if [ $USER == "vagrant" ]
-then 
-    cp files/bashrc /home/vagrant/.bashrc
+# If using with vagrant, user is "root" when running the script, so:
+if [ $USER == "root" ]
+    then 
+        cp files/bashrc /home/vagrant/.bashrc
 else
     cp files/bashrc ~/.bashrc
 fi
