@@ -40,12 +40,12 @@ setup () {
     sudo apt-get update
     sudo apt-get upgrade -y
     curl -V
-    if [ $? != "0"]
+    if [ $? != "0" ]
         then
             sudo apt-get install curl -y
     fi
     git --version
-    if [ $? != "0"]
+    if [ $? != "0" ]
         then
             sudo apt-get install git -y
     fi
