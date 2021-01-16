@@ -11,7 +11,6 @@ python3 \
 python3-pip \
 pylint3 \
 idle3 \
-virtualenv \
 python-dev \
 libpq-dev
 

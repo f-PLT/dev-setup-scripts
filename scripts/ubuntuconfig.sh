@@ -3,12 +3,9 @@
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
-sudo apt install -y gnome-tweaks vim
+sudo apt install -y gnome-tweaks
 echo 'Copying bashrc file to home'
 cp files/bashrc ~/.bashrc
-# vim config
-echo 'Copying vimrc to home'
-cp files/vimrc ~/.vimrc
 echo 'Configuring Ubuntu theme'
 # Paper Icons
 sudo add-apt-repository -y -u ppa:snwh/ppa

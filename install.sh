@@ -39,9 +39,21 @@ setup () {
     # System update
     sudo apt-get update
     sudo apt-get upgrade -y
-    sudo apt-get install git curl -y
+    curl -V
+    if [ $? != "0"]
+        then
+            sudo apt-get install curl -y
+    fi
+    git --version
+    if [ $? != "0"]
+        then
+            sudo apt-get install git -y
+    fi
     # Fetch repo
-    git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+    if [ ! -d "$HOME/dev-setup" ]
+        then
+            git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+    fi
 }
 
 # ubuntuconfig
