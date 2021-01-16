@@ -93,14 +93,14 @@ list () {
     echo " List of available configurations:"
     echo
     echo "    - basictools : Basic packages and VS code"
-    echo "    - c          : C libraries and IDE"
+    echo "    - c          : C libraries"
     echo "    - docker     : Docker installation and configuration"
-    echo "    - java       : Open JDK, maven, gradle and IDE"
-    echo "    - python     : Python libraries and IDE"
+    echo "    - java       : Open JDK, maven, gradle"
+    echo "    - python     : Python libraries"
     echo "    - setup      : Updates system, fetches repository."
     echo "                   Run this first if you downloaded install.sh file only"
     echo "    - ubuntu     : Ubuntu system configs and themes"
-    echo "    - web        : NVM, Yarn and Web IDE"
+    echo "    - web        : NVM, Yarn and"
     echo
     echo " Preset installation packages:"
     echo

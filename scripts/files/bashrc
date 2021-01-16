@@ -128,6 +128,7 @@ set -o vi
 
 # Scripts perso
 export PATH=~/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 # Giteditor
 export GIT_EDITOR=`which vim`

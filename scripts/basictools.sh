@@ -9,7 +9,12 @@ terminator \
 vim
 
 echo 'Copying vimrc to home'
-cp files/vimrc ~/.vimrc
+if [ $USER == "vagrant" ]
+then
+    cp files/vimrc /home/vagrant/.vimrc
+else
+    cp files/vimrc ~/.vimrc
+fi
 
 echo 'Installing VS Code'
 sudo snap install code --classic

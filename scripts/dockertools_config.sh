@@ -26,9 +26,9 @@ if [ $? != "0" ]
         sudo usermod -aG docker $USER
 fi
 echo
-echo "Checking if Docker is alreadly installed..."
+echo "Checking if Docker-compose is alreadly installed..."
 docker-compose -v
-if [ $? != "0"]
+if [ $? != "0" ]
     then
         echo 'Installing docker-compose'
         sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
