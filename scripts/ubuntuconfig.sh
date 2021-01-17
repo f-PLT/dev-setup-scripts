@@ -4,14 +4,7 @@ echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
 sudo apt-get install -y gnome-tweaks
-echo 'Copying bashrc file to home'
-# If using with vagrant, user is "root" when running the script, so:
-if [ $USER == "root" ]
-    then 
-        cp files/bashrc /home/vagrant/.bashrc
-else
-    cp files/bashrc ~/.bashrc
-fi
+
 echo 'Configuring Ubuntu theme'
 # Paper Icons
 sudo add-apt-repository -y -u ppa:snwh/ppa

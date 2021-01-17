@@ -17,6 +17,10 @@ basictools () {
     (cd ~/dev-setup/scripts && sudo ./basictools.sh)
 }
 
+bashconf () {
+    (cd ~/dev-setup/scripts && sudo ./bashconf.sh)
+}
+
 # ctools
 c () {
     (cd ~/dev-setup/scripts && sudo ./ctools.sh)
@@ -74,6 +78,7 @@ web () {
 # Preset installations
 all () {
     setup
+    bashconf
     basictools
     ubuntu
     python
@@ -85,6 +90,7 @@ all () {
 
 custom () {
     setup
+    bashconf
     basictools
     ubuntu
     python
@@ -95,6 +101,7 @@ custom () {
 list () {
     echo " List of available configurations:"
     echo
+    echo "    - bashconf   : Set bashrc file. This will overrite bashrc file, so run this first."
     echo "    - basictools : Basic packages and VS code"
     echo "    - c          : C libraries"
     echo "    - docker     : Docker installation and configuration"
@@ -109,7 +116,7 @@ list () {
     echo
     echo "    - all        : Installs everything"
     echo "    - custom     : Installs custom selection:"
-    echo "                   bacistools, docker, python, ubuntu and web."
+    echo "                   bacistools, bashconf docker, python, ubuntu and web."
 }
 
 if [[ "$#" -eq 0 ]]; then
@@ -128,6 +135,9 @@ do
             ;;
         "setup")
             setup
+            ;;
+        "bashconf")
+            bashconf
             ;;
         "basictools")
             basictools
