@@ -11,7 +11,7 @@ I use Jetbrains IDEs, and their installation is included in the corresponding
 recipes. ex: CLion is installed by `ctools.rb`
 
 This project is built and maintained for my own personnal needs and learning 
-experience. You are free to clone it and adapt it for your own needs as long 
+experience. You are free to clone it and adapt-get it for your own needs as long 
 as you respect the MIT license agreement.
 
 ## Project outline

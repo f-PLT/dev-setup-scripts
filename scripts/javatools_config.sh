@@ -3,7 +3,7 @@ echo '*'
 echo '* Webb tools configuration script - STARTING'
 echo '*'
 echo 'Installing Java'
-sudo apt install -y \
+sudo apt-get install -y \
 default-jdk \
 maven
 

@@ -3,7 +3,7 @@
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
-sudo apt install -y gnome-tweaks
+sudo apt-get install -y gnome-tweaks
 echo 'Copying bashrc file to home'
 # If using with vagrant, user is "root" when running the script, so:
 if [ $USER == "root" ]

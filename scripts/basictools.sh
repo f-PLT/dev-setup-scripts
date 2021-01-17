@@ -3,7 +3,7 @@ echo '*'
 echo '* Basictools configuration script - STARTING'
 echo '*'
 echo 'Installing packages'
-sudo apt install -y \
+sudo apt-get install -y \
 build-essential \
 software-properties-common \
 terminator \

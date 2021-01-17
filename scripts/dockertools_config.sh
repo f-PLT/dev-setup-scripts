@@ -16,10 +16,10 @@ if [ $? != "0" ]
 
         echo 'Adding Docker to package manager'
         sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-        sudo apt update
+        sudo apt-get update
 
         echo 'Installing Docker'
-        sudo apt install -y docker-ce docker-ce-cli containerd.io curl
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io curl
 
         echo 'Adding current user to docker group and'
         sudo groupadd docker
