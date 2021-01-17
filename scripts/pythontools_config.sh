@@ -27,7 +27,8 @@ echo 'Checking if miniconda3 exists'
 if [ ! -d "$HOME/miniconda3" ]; then
 echo 'Fetching and installing miniconda3'
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-    bash ~/miniconda.sh -b -p
+    bash ~/miniconda.sh -b -p $HOME/miniconda3
+    conda init
     rm ~/miniconda.sh
 else
     echo 'miniconda3 exists, consider checking if update is necessary'
