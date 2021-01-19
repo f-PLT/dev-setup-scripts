@@ -18,9 +18,6 @@ else
     cp files/vimrc ~/.vimrc
 fi
 
-echo 'Installing VS Code'
-sudo snap install code --classic
-
 echo '*'
-echo '* Basictools configuration script - Done'
+echo '* Basictools configuration script - DONE'
 echo '*'

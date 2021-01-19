@@ -31,6 +31,11 @@ docker () {
     (cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
 }
 
+ide () {
+    echo 'Installing VS Code'
+    sudo snap install code --classic
+}
+
 # javatools
 java () {
     (cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
@@ -45,7 +50,6 @@ python () {
 setup () {
     # System update
     sudo apt-get update
-    sudo apt-get upgrade -y
     curl -V
     if [ $? != "0" ]
         then
@@ -105,6 +109,7 @@ list () {
     echo "    - basictools : Basic packages and VS code"
     echo "    - c          : C libraries"
     echo "    - docker     : Docker installation and configuration"
+    echo "    - ide        : Install Vscode"
     echo "    - java       : Open JDK, maven, gradle"
     echo "    - python     : Python libraries"
     echo "    - setup      : Updates system, fetches repository."
@@ -141,6 +146,9 @@ do
             ;;
         "basictools")
             basictools
+            ;;
+        "ide")
+            ide
             ;;
         "ubuntu")
             ubuntu
