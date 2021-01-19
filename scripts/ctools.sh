@@ -10,5 +10,5 @@ bats \
 valgrind
 
 echo '*'
-echo '* C configuration script - Done'
+echo '* C configuration script - DONE'
 echo '*'

@@ -3,8 +3,8 @@
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
-sudo apt-get install -y gnome-tweaks
 
+sudo apt-get install -y gnome-tweaks
 echo 'Configuring Ubuntu theme'
 # Paper Icons
 sudo add-apt-repository -y -u ppa:snwh/ppa
