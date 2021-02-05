@@ -90,6 +90,7 @@ all () {
     java
     c
     web
+    ide
 }
 
 custom () {
@@ -100,6 +101,7 @@ custom () {
     python
     docker
     web
+    ide
 }
 
 list () {
