@@ -11,7 +11,7 @@ docker -v
 if [ $? != "0" ]
     then
         echo "Installing Docker"
-        sudo apt-get install \
+        sudo apt-get install -y \
             apt-transport-https \
             ca-certificates \
             gnupg-agent \
