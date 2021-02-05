@@ -128,7 +128,6 @@ set -o vi
 
 # Scripts perso
 export PATH=~/bin:$PATH
-export PATH=~/.local/bin:$PATH
 
 # Giteditor
 export GIT_EDITOR=`which vim`
@@ -144,7 +143,7 @@ alias mv='/bin/mv -i'
 alias rm='/bin/rm -i'
 
 # keygen alias
-alias keygen='ssh-keygen -t rsa -b 4096 -C'
+alias keygen='ssh-keygen -t rsa -b 4096'
 
 # History pipe alias
 alias hgrep='history | grep'
