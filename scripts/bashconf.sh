@@ -2,8 +2,6 @@
 echo '*'
 echo '* Bash shell configuration script - STARTING'
 echo '*'
-echo 'Installing Terminator'
-sudo apt-get install terminator
 echo 'Copying bashrc file to home'
 cp files/bashrc ~/.bashrc
 

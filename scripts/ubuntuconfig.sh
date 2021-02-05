@@ -3,7 +3,9 @@
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
 echo '*'
-
+echo 'Installing Terminator'
+sudo apt-get install terminator
+echo 'Installing Gnome Tweaks'
 sudo apt-get install -y gnome-tweaks
 echo 'Configuring Ubuntu theme'
 # Paper Icons
