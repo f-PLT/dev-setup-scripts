@@ -23,16 +23,16 @@ flake8 \
 pylint \
 --upgrade autopep8
 
-echo 'Checking if miniconda3 exists'
-if [ ! -d "$HOME/miniconda3" ]; then
-echo 'Fetching and installing miniconda3'
+echo 'Checking if miniconda exists'
+if [ ! -d "$HOME/miniconda" ]; then
+echo 'Fetching and installing miniconda'
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
     bash ~/miniconda.sh -b -p $HOME/miniconda
     export PATH=$HOME/miniconda/bin:$PATH
     conda init
     rm ~/miniconda.sh
 else
-    echo 'miniconda3 exists, consider checking if update is necessary'
+    echo 'miniconda exists, consider checking if update is necessary'
 fi
 
 echo '*'
