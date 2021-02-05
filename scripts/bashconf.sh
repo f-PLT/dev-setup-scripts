@@ -4,7 +4,7 @@ echo '* Bash configuration script - STARTING'
 echo '*'
 echo 'Copying bashrc file to home'
 # If using with vagrant, user is "root" when running the script, so:
-if [ $USER == "root" ]
+if [ $HOME == "/root" ]
     then 
         cp files/bashrc /home/vagrant/.bashrc
 else
