@@ -11,7 +11,7 @@ vim
 
 echo 'Copying vimrc to home'
 # If using with vagrant, user is "root" when running the script, so:
-if [ $HOME == "/root" ]
+if [ $USER == "vagrant" ]
 then
     cp files/vimrc /home/vagrant/.vimrc
 else
