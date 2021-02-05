@@ -14,21 +14,21 @@
 
 # Basic tools scripts
 basictools () {
-    (cd ~/dev-setup/scripts && sudo ./basictools.sh)
+    (cd ~/dev-setup/scripts && ./basictools.sh)
 }
 
 bashconf () {
-    (cd ~/dev-setup/scripts && sudo ./bashconf.sh)
+    (cd ~/dev-setup/scripts && ./bashconf.sh)
 }
 
 # ctools
 c () {
-    (cd ~/dev-setup/scripts && sudo ./ctools.sh)
+    (cd ~/dev-setup/scripts && ./ctools.sh)
 }
 
 # dockertools
 docker () {
-    (cd ~/dev-setup/scripts && sudo ./dockertools_config.sh)
+    (cd ~/dev-setup/scripts && ./dockertools_config.sh)
 }
 
 ide () {
@@ -38,7 +38,7 @@ ide () {
 
 # javatools
 java () {
-    (cd ~/dev-setup/scripts && sudo ./javatools_config.sh)
+    (cd ~/dev-setup/scripts && ./javatools_config.sh)
 }
 
 # pythontools
@@ -71,7 +71,7 @@ setup () {
 
 # ubuntuconfig
 ubuntu () {
-    (cd ~/dev-setup/scripts && sudo ./ubuntuconfig.sh)
+    (cd ~/dev-setup/scripts && ./ubuntuconfig.sh)
 }
 
 # webtools
