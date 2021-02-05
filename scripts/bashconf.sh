@@ -1,17 +1,13 @@
 #!/bin/bash
 echo '*'
-echo '* Bash configuration script - STARTING'
+echo '* Bash shell configuration script - STARTING'
 echo '*'
+echo 'Installing Terminator'
+sudo apt-get install terminator
 echo 'Copying bashrc file to home'
-# If using with vagrant, user is "root" when running the script, so:
-if [ $USER == "vagrant" ]
-    then 
-        cp files/bashrc /home/vagrant/.bashrc
-else
-    cp files/bashrc ~/.bashrc
-fi
+cp files/bashrc ~/.bashrc
 
 echo '*'
-echo '* Bash configuration script - DONE'
+echo '* Bash shell configuration script - DONE'
 echo '* You will need to refresh your bash for it to take effect'
 echo '*'
