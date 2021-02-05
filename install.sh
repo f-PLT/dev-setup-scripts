@@ -12,11 +12,12 @@
 #
 # Use at your own risks.
 
-# Basic tools scripts
+# basic tools scripts
 basictools () {
     (cd ~/dev-setup/scripts && ./basictools.sh)
 }
 
+# bash configuration
 bashconf () {
     (cd ~/dev-setup/scripts && ./bashconf.sh)
 }
@@ -74,6 +75,11 @@ ubuntu () {
     (cd ~/dev-setup/scripts && ./ubuntuconfig.sh)
 }
 
+# vim configuration
+vimconf () {
+    (cd ~/dev-setup/scripts && ./vimconf.sh)
+}
+
 # webtools
 web () { 
     (cd ~/dev-setup/scripts && ./webtools_config.sh)
@@ -84,6 +90,7 @@ all () {
     setup
     bashconf
     basictools
+    vimconf
     ubuntu
     python
     docker
@@ -96,6 +103,7 @@ all () {
 custom () {
     setup
     bashconf
+    vimconf
     basictools
     ubuntu
     python
@@ -107,8 +115,10 @@ custom () {
 list () {
     echo " List of available configurations:"
     echo
-    echo "    - bashconf   : Set bashrc file. This will overrite bashrc file, so run this first."
-    echo "    - basictools : Basic packages and VS code"
+    echo "    - bashconf   : Set .bashrc file. This will overwrite your .bashrc file,"
+    echo "                   Run this first, as python and other configurations"
+    echo "                   will modify this file too"
+    echo "    - basictools : Basic packages and vim configuration."
     echo "    - c          : C libraries"
     echo "    - docker     : Docker installation and configuration"
     echo "    - ide        : Install Vscode"
@@ -117,13 +127,14 @@ list () {
     echo "    - setup      : Updates system, fetches repository."
     echo "                   Run this first if you downloaded install.sh file only"
     echo "    - ubuntu     : Ubuntu system configs and themes"
+    echo "    - vimconf    : Set .vimrc file. This will overwrite your .vimrc file."
     echo "    - web        : NVM, Yarn and"
     echo
     echo " Preset installation packages:"
     echo
     echo "    - all        : Installs everything"
     echo "    - custom     : Installs custom selection:"
-    echo "                   bacistools, bashconf docker, python, ubuntu and web."
+    echo "                   bacistools, bashconf, vimconf, docker, python, ubuntu, ide and web."
 }
 
 if [[ "$#" -eq 0 ]]; then
@@ -148,6 +159,9 @@ do
             ;;
         "basictools")
             basictools
+            ;;
+        "vimconf")
+            vimconf
             ;;
         "ide")
             ide
