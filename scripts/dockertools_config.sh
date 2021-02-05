@@ -24,7 +24,7 @@ if [ $? != "0" ]
         sudo apt-get update
 
         echo 'Installing Docker'
-        sudo apt-get install -y docker-ce docker-ce-cli containerd.io curl
+        sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
         echo 'Adding current user to docker group and'
         sudo groupadd docker
