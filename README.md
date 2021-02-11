@@ -2,17 +2,13 @@
 
 ## Description
 
-This cookbook is used to setup my dev environment.
+I use these scripts to setup my dev environment.
 
 It is meant for a first install, not constant provisionning, so some problems
 can occur if trying to run multiple times on the same system.
 
-I use Jetbrains IDEs, and their installation is included in the corresponding 
-recipes. ex: CLion is installed by `ctools.rb`
-
 This project is built and maintained for my own personnal needs and learning 
-experience. You are free to clone it and adapt-get it for your own needs as long 
-as you respect the MIT license agreement.
+experience. You are free to clone it and adapt-get it for your own needs.
 
 ## Project outline
 
@@ -27,6 +23,15 @@ as you respect the MIT license agreement.
 - [ ] Androit App related packages and IDE
 
 ## How to
+
+### **** WARNING *****
+
+`vimconf` and `bashconf` overwrite `.vimrc` and `.bashrc` files respectively.
+
+*** DO NOT run them if you have already modified those files. ***
+
+`bashconf` should be run before `python` and `web` as they both append to
+`bashrc`. 
 
 ### The install script
 
