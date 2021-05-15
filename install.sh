@@ -100,7 +100,7 @@ all () {
     ide
 }
 
-custom () {
+desktop () {
     setup
     bashconf
     vimconf
@@ -110,6 +110,16 @@ custom () {
     docker
     web
     ide
+}
+
+headless () {
+    setup
+    bashconf
+    vimconf
+    basictools
+    python
+    docker
+    web
 }
 
 list () {
@@ -133,8 +143,10 @@ list () {
     echo " Preset installation packages:"
     echo
     echo "    - all        : Installs everything"
-    echo "    - custom     : Installs custom selection:"
-    echo "                   bacistools, bashconf, vimconf, docker, python, ubuntu, ide and web."
+    echo "    - desktop    : Installs desktop selection:"
+    echo "                   basictools, bashconf, vimconf, docker, python, ubuntu, ide and web."
+    echo "    - headless   : Installs headless selection:"
+    echo "                   basictools, bashconf, vimconf, docker, python, and web."
 }
 
 if [[ "$#" -eq 0 ]]; then
@@ -148,8 +160,11 @@ do
         "list")
             list
             ;;
-        "custom")
-            custom
+        "headless")
+            headless
+            ;;
+        "desktop")
+            desktop
             ;;
         "setup")
             setup
