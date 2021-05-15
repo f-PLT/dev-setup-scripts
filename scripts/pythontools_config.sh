@@ -24,11 +24,12 @@ pylint \
 --upgrade autopep8
 
 echo 'Checking if miniconda exists'
-if [ ! -d "$HOME/miniconda" ]; then
+conda --version
+if [ $? != "0" ]; then
 echo 'Fetching and installing miniconda'
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-    bash ~/miniconda.sh -b -p $HOME/miniconda
-    export PATH=$HOME/miniconda/bin:$PATH
+    bash ~/miniconda.sh -b -p $HOME/.conda
+    export PATH=$HOME/.conda/bin:$PATH
     conda init
     rm ~/miniconda.sh
 else
