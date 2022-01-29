@@ -12,7 +12,7 @@ echo
 echo 'Configuring NVM'
 # Fetch nvm and install stable node
 echo 'Installing and configuring nvm packages'
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 echo 'The following commands will need to be run in a new terminal'
 echo '$ nvm install stable'

@@ -12,11 +12,13 @@ maven
 gradle --version
 if [ $? == "0" ]
     then
-        wget https://services.gradle.org/distributions/gradle-6.7.1-all.zip
+        VERSION=7.3.3
+        wget https://services.gradle.org/distributions/gradle-${VERSION}-all.zip
         sudo mkdir /opt/gradle
-        sudo unzip -d /opt/gradle gradle-6.7.1-all.zip
+        sudo unzip -d /opt/gradle gradle-${VERSION}-all.zip
+        GRADLE_EXPORT="export PATH=\$PATH:/opt/gradle/gradle-${VERSION}/bin"
         echo '# Gradle path export' >> ~/.bashrc
-        echo 'export PATH=$PATH:/opt/gradle/gradle-6.7.1/bin' >> ~/.bashrc
+        echo $GRADLE_EXPORT >> ~/.bashrc
 fi
 
 echo '*'
