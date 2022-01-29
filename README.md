@@ -20,7 +20,7 @@ experience. You are free to clone it and adapt-get it for your own needs.
 - [x] Ubuntu environment customization
 - [x] Docker and Docker-compose
 - [x] Java with Maven and Gradle
-- [ ] Androit App related packages and IDE
+- [ ] Android App related packages and IDE
 
 ## How to
 
