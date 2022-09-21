@@ -39,7 +39,7 @@ alias hgrep='history | grep'
 alias createEnv='conda create python=3 -n'
 
 # Docker
-alias dcp='docker-compose'
+alias dcp='docker compose'
 EOF
 
 echo '*'
