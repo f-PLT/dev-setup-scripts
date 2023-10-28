@@ -32,9 +32,16 @@ echo 'Fetching and installing miniconda'
     export PATH=$HOME/.conda/bin:$PATH
     conda init
     rm ~/miniconda.sh
+
+echo 'Installing Micromamba'
+(cd ~/.local && wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba)
+.local/bin/micromamba shell init -s bash -p ~/.micromamba
+echo "alias mamba='micromamba'" >> ~/.bashrc
+
 else
     echo 'miniconda exists, consider checking if update is necessary'
 fi
+
 
 echo '*'
 echo '* Python configuration script - DONE'
