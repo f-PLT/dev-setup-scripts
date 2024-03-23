@@ -1,4 +1,4 @@
-# dev-setup
+# dev-setup-scripts
 
 ## Description
 

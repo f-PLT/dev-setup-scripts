@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author: Francis Pelletier
 # Date  : January 2021
 
-# This script is part of this project : https://gitlab.com/f_PLT/dev-setup
+# This script is part of this project : https://github.com/f-PLT/dev-setup-scripts
 
 # This script will configure everything. It is meant to be run
 # on a newly installed system, or one meant to become a new 
@@ -64,7 +64,7 @@ setup () {
     # Fetch repo
     if [ ! -d "$HOME/dev-setup" ]
         then
-            git clone https://gitlab.com/f_PLT/dev-setup.git ~/dev-setup
+            git clone https://github.com/f-PLT/dev-setup-scripts.git ~/dev-setup
     else
         (cd ~/dev-setup && git pull)
     fi
