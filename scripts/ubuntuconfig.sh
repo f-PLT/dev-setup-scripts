@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # bashrc config
 echo '*'
 echo '* Ubuntu config setup script - STARTING'
