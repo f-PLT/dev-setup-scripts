@@ -22,6 +22,18 @@ fi
 
 SCRIPT_FOLDER_PATH=$BASE_DEVSETUP_PATH/scripts
 
+add_local_bin_to_path() {
+    local target_dir="$HOME/.local/bin"
+
+    # Check if the directory exists and is not already in PATH
+    if [ -d "$target_dir" ] && [[ ":$PATH:" != *":$target_dir:"* ]]; then
+        export PATH="$target_dir:$PATH"
+        echo "Added $target_dir to PATH."
+    else
+        echo "$target_dir is already in PATH or does not exist."
+    fi
+}
+
 # basic tools scripts
 basictools () {
     (cd $SCRIPT_FOLDER_PATH && ./basictools.sh)
@@ -54,11 +66,13 @@ java () {
 
 # pythontools
 python () {
+    add_local_bin_to_path
     (cd $SCRIPT_FOLDER_PATH && ./pythontools_config.sh)
 }
 
 # Setting things in to place
 setup () {
+    add_local_bin_to_path
     # System update
     sudo apt-get update
     curl -V
