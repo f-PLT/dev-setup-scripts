@@ -11,9 +11,12 @@ python3 \
 python3-pip \
 idle3 \
 virtualenv \
+python3-venv \
 libpq-dev
 
 echo 'Installing pipx'
+virtualenv $HOME/.venv
+source $HOME/.venv/bin/activate
 pip3 install pipx
 pipx ensurepath
 
