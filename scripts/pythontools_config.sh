@@ -9,19 +9,20 @@ echo
 sudo apt-get install -y \
 python3 \
 python3-pip \
-pylint3 \
 idle3 \
 python-dev \
+virtualenv \
 libpq-dev
 
-echo 'Installing basic pip packages'
-pip3 install \
-virtualenv \
-flask \
-pytest \
-flake8 \
-pylint \
---upgrade autopep8
+echo 'Installing pipx'
+pip install pipx
+pipx ensurepath
+
+echo 'Installing poetry'
+pipx install poetry
+
+echo 'Installing astral.sh/uv'
+pipx install uv
 
 echo 'Checking if miniconda exists'
 conda --version
@@ -33,15 +34,26 @@ echo 'Fetching and installing miniconda'
     conda init
     rm ~/miniconda.sh
 
-echo 'Installing Micromamba'
-(cd ~/.local && wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba)
-.local/bin/micromamba shell init -s bash -p ~/.micromamba
-echo "alias mamba='micromamba'" >> ~/.bashrc
-
 else
     echo 'miniconda exists, consider checking if update is necessary'
 fi
 
+echo 'Checking if micromamba exists'
+micromamba --version
+if [ $? != "0" ]; then
+echo 'Installing Micromamba'
+(cd ~/.local && wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba)
+.local/bin/micromamba shell init -s bash -p ~/.micromamba
+
+echo "" >> ~/.bashrc
+echo "# Conda aliases" >> ~/.bashrc
+echo "alias mamba='micromamba'" >> ~/.bashrc
+echo "alias createEnv='conda create python=3.13 -n'" >> ~/.bashrc
+echo "alias createMambaEnv='mamba create python=3.13 -n'" >> ~/.bashrc
+echo "" >> ~/.bashrc
+
+
+fi
 
 echo '*'
 echo '* Python configuration script - DONE'

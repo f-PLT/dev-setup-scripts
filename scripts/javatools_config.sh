@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo '*'
-echo '* Webb tools configuration script - STARTING'
+echo '* Java tools configuration script - STARTING'
 echo '*'
 echo 'Installing Java'
 
@@ -12,7 +12,7 @@ maven
 gradle --version
 if [ $? == "0" ]
     then
-        VERSION=7.3.3
+        VERSION=8.14
         wget https://services.gradle.org/distributions/gradle-${VERSION}-all.zip
         sudo mkdir /opt/gradle
         sudo unzip -d /opt/gradle gradle-${VERSION}-all.zip
@@ -22,5 +22,5 @@ if [ $? == "0" ]
 fi
 
 echo '*'
-echo '* Webb tools configuration script - DONE'
+echo '* Java tools configuration script - DONE'
 echo '*'
