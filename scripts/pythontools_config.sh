@@ -54,6 +54,8 @@ echo "alias createEnv='conda create python=3.13 -n'" >> ~/.bashrc
 echo "alias createMambaEnv='mamba create python=3.13 -n'" >> ~/.bashrc
 echo "" >> ~/.bashrc
 
+# Set default channels for conda
+cp files/condarc ~/.condarc
 
 fi
 
