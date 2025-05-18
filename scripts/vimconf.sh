@@ -2,7 +2,7 @@
 echo '*'
 echo '* Vim configuration script - STARTING'
 echo '*'
-vim -V
+vim --version
 if [ $? != "0" ]
     then
         sudo apt-get install -y vim

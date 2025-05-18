@@ -35,11 +35,6 @@ alias keygen='ssh-keygen -t rsa -b 4096'
 # History pipe alias
 alias hgrep='history | grep'
 
-# Conda aliases
-alias createEnv='conda create python=3 -n'
-
-# Docker
-alias dcp='docker compose'
 EOF
 
 echo '*'

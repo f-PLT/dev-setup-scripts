@@ -7,7 +7,18 @@ sudo apt-get install -y \
 libcunit1 \
 libcunit1-dev \
 bats \
-valgrind
+valgrind \
+cmake \
+ninja-build \
+pkg-config \
+clang-tools \
+cppcheck \
+splint \
+flawfinder \
+gdb \
+lldb \
+libasan6 \
+libubsan1
 
 echo '*'
 echo '* C configuration script - DONE'
