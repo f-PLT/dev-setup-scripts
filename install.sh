@@ -12,24 +12,34 @@
 #
 # Use at your own risks.
 
+
+if [ -d scripts ]
+    then
+        BASE_DEVSETUP_PATH=$(dirname "$(realpath $0)")
+else
+    BASE_DEVSETUP_PATH=$HOME/.dev-setup
+fi
+
+SCRIPT_FOLDER_PATH=$BASE_DEVSETUP_PATH/scripts
+
 # basic tools scripts
 basictools () {
-    (cd ~/dev-setup/scripts && ./basictools.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./basictools.sh)
 }
 
 # bash configuration
 bashconf () {
-    (cd ~/dev-setup/scripts && ./bashconf.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./bashconf.sh)
 }
 
 # ctools
 c () {
-    (cd ~/dev-setup/scripts && ./ctools.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./ctools.sh)
 }
 
 # dockertools
 docker () {
-    (cd ~/dev-setup/scripts && ./dockertools_config.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./dockertools_config.sh)
 }
 
 ide () {
@@ -39,12 +49,12 @@ ide () {
 
 # javatools
 java () {
-    (cd ~/dev-setup/scripts && ./javatools_config.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./javatools_config.sh)
 }
 
 # pythontools
 python () {
-    (cd ~/dev-setup/scripts && ./pythontools_config.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./pythontools_config.sh)
 }
 
 # Setting things in to place
@@ -62,27 +72,27 @@ setup () {
             sudo apt-get install git -y
     fi
     # Fetch repo
-    if [ ! -d "$HOME/dev-setup" ]
+    if [ ! -d $SCRIPT_FOLDER_PATH ]
         then
-            git clone https://github.com/f-PLT/dev-setup-scripts.git ~/dev-setup
+            git clone https://github.com/f-PLT/dev-setup-scripts.git $BASE_DEVSETUP_PATH
     else
-        (cd ~/dev-setup && git pull)
+        (cd $BASE_DEVSETUP_PATH && git pull)
     fi
 }
 
 # ubuntuconfig
 ubuntu () {
-    (cd ~/dev-setup/scripts && ./ubuntuconfig.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./ubuntuconfig.sh)
 }
 
 # vim configuration
 vimconf () {
-    (cd ~/dev-setup/scripts && ./vimconf.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./vimconf.sh)
 }
 
 # webtools
 web () { 
-    (cd ~/dev-setup/scripts && ./webtools_config.sh)
+    (cd $SCRIPT_FOLDER_PATH && ./webtools_config.sh)
 }
 
 # Preset installations
