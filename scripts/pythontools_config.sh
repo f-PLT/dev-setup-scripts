@@ -10,7 +10,6 @@ sudo apt-get install -y \
 python3 \
 python3-pip \
 idle3 \
-python-dev \
 virtualenv \
 libpq-dev
 
