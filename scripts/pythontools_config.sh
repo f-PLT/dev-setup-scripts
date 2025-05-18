@@ -15,7 +15,7 @@ virtualenv \
 libpq-dev
 
 echo 'Installing pipx'
-pip install pipx
+pip3 install pipx
 pipx ensurepath
 
 echo 'Installing poetry'
