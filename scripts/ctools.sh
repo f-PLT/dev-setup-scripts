@@ -17,7 +17,6 @@ splint \
 flawfinder \
 gdb \
 lldb \
-perf \
 libasan6 \
 libubsan1
 
