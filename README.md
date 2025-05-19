@@ -18,7 +18,6 @@ You are free to clone it and adapt it for your own needs.
 - [x] Python related packages and IDE
 - [x] Basic web related packages and IDE
 - [x] Bashrc and Vim customization
-- [x] Ubuntu environment customization
 - [x] Docker and Docker-compose
 - [x] Java with Maven and Gradle
 
