@@ -8,7 +8,7 @@
 # on a newly installed system, or one meant to become a new 
 # developement environment.
 #
-# Tested with Ubuntu 18.04 and 20.04, as well a Vagrant
+# Tested with Ubuntu 24.04, as well a Vagrant
 #
 # Use at your own risks.
 
@@ -90,11 +90,6 @@ setup () {
     fi
 }
 
-# ubuntuconfig
-ubuntu () {
-    (cd $SCRIPT_FOLDER_PATH && ./ubuntuconfig.sh)
-}
-
 # vim configuration
 vimconf () {
     (cd $SCRIPT_FOLDER_PATH && ./vimconf.sh)
@@ -111,7 +106,6 @@ all () {
     bashconf
     basictools
     vimconf
-    ubuntu
     python
     docker
     java
@@ -125,7 +119,6 @@ desktop () {
     bashconf
     vimconf
     basictools
-    ubuntu
     python
     docker
     web
@@ -156,7 +149,6 @@ list () {
     echo "    - python     : Python libraries"
     echo "    - setup      : Updates system, fetches repository."
     echo "                   Run this first if you downloaded install.sh file only"
-    echo "    - ubuntu     : Ubuntu system configs and themes"
     echo "    - vimconf    : Set .vimrc file. This will overwrite your .vimrc file."
     echo "    - web        : NVM, Yarn and"
     echo
@@ -164,7 +156,7 @@ list () {
     echo
     echo "    - all        : Installs everything"
     echo "    - desktop    : Installs desktop selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, ubuntu, ide and web."
+    echo "                   basictools, bashconf, vimconf, docker, python, ide and web."
     echo "    - headless   : Installs headless selection:"
     echo "                   basictools, bashconf, vimconf, docker, python, and web."
 }
@@ -200,9 +192,6 @@ do
             ;;
         "ide")
             ide
-            ;;
-        "ubuntu")
-            ubuntu
             ;;
         "python")
             python
