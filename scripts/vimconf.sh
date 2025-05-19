@@ -3,9 +3,8 @@ echo '*'
 echo '* Vim configuration script - STARTING'
 echo '*'
 vim --version
-if [ $? != "0" ]
-    then
-        sudo apt-get install -y vim
+if [ $? != "0" ]; then
+    sudo apt-get install -y vim
 fi
 echo 'Copying vimrc to home'
 cp files/vimrc ~/.vimrc

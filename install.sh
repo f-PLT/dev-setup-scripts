@@ -13,9 +13,8 @@
 # Use at your own risks.
 
 
-if [ -d scripts ]
-    then
-        BASE_DEVSETUP_PATH=$(dirname "$(realpath $0)")
+if [ -d scripts ]; then
+    BASE_DEVSETUP_PATH=$(dirname "$(realpath $0)")
 else
     BASE_DEVSETUP_PATH=$HOME/.dev-setup
 fi
@@ -76,19 +75,16 @@ setup () {
     # System update
     sudo apt-get update
     curl -V
-    if [ $? != "0" ]
-        then
-            sudo apt-get install curl -y
+    if [ $? != "0" ]; then
+        sudo apt-get install curl -y
     fi
     git --version
-    if [ $? != "0" ]
-        then
-            sudo apt-get install git -y
+    if [ $? != "0" ]; then
+        sudo apt-get install git -y
     fi
     # Fetch repo
-    if [ ! -d $SCRIPT_FOLDER_PATH ]
-        then
-            git clone https://github.com/f-PLT/dev-setup-scripts.git $BASE_DEVSETUP_PATH
+    if [ ! -d $SCRIPT_FOLDER_PATH ]; then
+        git clone https://github.com/f-PLT/dev-setup-scripts.git $BASE_DEVSETUP_PATH
     else
         (cd $BASE_DEVSETUP_PATH && git pull)
     fi

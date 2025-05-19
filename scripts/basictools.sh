@@ -7,6 +7,7 @@ sudo apt-get install -y \
 build-essential \
 software-properties-common \
 vim \
+tree \
 bash-completion
 
 echo 'Setting System file watcher'
