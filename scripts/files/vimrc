@@ -26,12 +26,6 @@ call plug#begin('~/.vim/plugged')
     " Snippets
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-
-    " Nit
-    Plug '~/Applications/nit/misc/vim'
-
-    " Godot
-    Plug 'quabug/vim-gdscript'
     
     "NerdTree
     Plug 'scrooloose/nerdtree'
