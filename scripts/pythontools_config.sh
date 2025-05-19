@@ -44,8 +44,11 @@ echo 'Checking if micromamba exists'
 micromamba --version
 if [ $? != "0" ]; then
 echo 'Installing Micromamba'
-    (cd ~/.local && wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba)
-    (cd ~/.local/bin/ && micromamba shell -p ~/.micromamba init -s bash)
+    wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+    mv bin/micromamba ~/.local/bin/micromamba
+    rm -rf bin/
+    ls ~.local/bin
+    ~/.local/bin/micromamba shell init -s bash ~/.micromamba
 
     echo "" >> ~/.bashrc
     echo "# Conda aliases" >> ~/.bashrc
