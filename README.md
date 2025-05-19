@@ -2,13 +2,14 @@
 
 ## Description
 
-I use these scripts to setup my dev environment.
+I use these scripts to setup my dev environment on new machines and VMs.
 
-It is meant for a first install, not constant provisionning, so some problems
-can occur if trying to run multiple times on the same system.
+It is meant for a first install, not constant provisionning. Some problems
+can occur if you try to run these scripts multiple times on the same system, 
+more so on existing systems that have already been configured manually.
 
-This project is built and maintained for my own personnal needs and learning 
-experience. You are free to clone it and adapt-get it for your own needs.
+This project is built and maintained for my own personnal needs. 
+You are free to clone it and adapt it for your own needs.
 
 ## Project outline
 
@@ -20,7 +21,6 @@ experience. You are free to clone it and adapt-get it for your own needs.
 - [x] Ubuntu environment customization
 - [x] Docker and Docker-compose
 - [x] Java with Maven and Gradle
-- [ ] Android App related packages and IDE
 
 ## How to
 
