@@ -44,19 +44,18 @@ echo 'Checking if micromamba exists'
 micromamba --version
 if [ $? != "0" ]; then
 echo 'Installing Micromamba'
-(cd ~/.local && wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba)
-.local/bin/micromamba shell init -s bash -p ~/.micromamba
+    (cd ~/.local && wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba)
+    (cd ~/.local/bin/ && micromamba shell -p ~/.micromamba init -s bash)
 
-echo "" >> ~/.bashrc
-echo "# Conda aliases" >> ~/.bashrc
-echo "alias mamba='micromamba'" >> ~/.bashrc
-echo "alias createEnv='conda create python=3.13 -n'" >> ~/.bashrc
-echo "alias createMambaEnv='mamba create python=3.13 -n'" >> ~/.bashrc
-echo "" >> ~/.bashrc
+    echo "" >> ~/.bashrc
+    echo "# Conda aliases" >> ~/.bashrc
+    echo "alias mamba='micromamba'" >> ~/.bashrc
+    echo "alias createEnv='conda create python=3.13 -n'" >> ~/.bashrc
+    echo "alias createMambaEnv='mamba create python=3.13 -n'" >> ~/.bashrc
+    echo "" >> ~/.bashrc
 
-# Set default channels for conda
-cp files/condarc ~/.condarc
-
+    # Set default channels for conda
+    cp files/condarc ~/.condarc
 fi
 
 echo '*'
