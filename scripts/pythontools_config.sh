@@ -57,7 +57,14 @@ echo 'Installing Micromamba'
     echo "" >> ~/.bashrc
 
     # Set default channels for conda
+    if [ -e ~/.condarc ]; then
+        cp ~/.condarc ~/.condarc_old
+    fi
     cp files/condarc ~/.condarc
+    echo "Your .condarc file has been created/overwritten and previous file was saved to ~/.condarc_old."
+    echo "Content of ~/.condarc:"
+    cat ~/.condarc
+
 fi
 
 echo '*'
