@@ -36,8 +36,22 @@ echo 'Fetching and installing miniconda'
     conda init
     rm ~/miniconda.sh
 
+else
+    echo 'miniconda exists, consider checking if update is necessary'
+fi
+
+echo 'Checking if micromamba exists'
+micromamba --version
+if [ $? != "0" ]; then
+echo 'Installing Micromamba'
+    wget -qO- https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xvj bin/micromamba
+    mv bin/micromamba ~/.local/bin/micromamba
+    rm -rf bin/
+    ~/.local/bin/micromamba shell init -s bash ~/.micromamba
+
     echo "" >> ~/.bashrc
     echo "# Conda aliases" >> ~/.bashrc
+    echo "alias mamba='micromamba'" >> ~/.bashrc
     echo "alias createEnv='conda create python=3.13 -n'" >> ~/.bashrc
     echo "alias createMambaEnv='mamba create python=3.13 -n'" >> ~/.bashrc
     echo "" >> ~/.bashrc
@@ -50,9 +64,6 @@ echo 'Fetching and installing miniconda'
     echo "Your .condarc file has been created/overwritten and previous file was saved to ~/.condarc_old."
     echo "Content of ~/.condarc:"
     cat ~/.condarc
-
-else
-    echo 'miniconda exists, consider checking if update is necessary'
 
 fi
 
