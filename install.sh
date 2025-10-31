@@ -69,6 +69,18 @@ python () {
     (cd $SCRIPT_FOLDER_PATH && ./pythontools_config.sh)
 }
 
+# miniforge
+miniforge () {
+    add_local_bin_to_path
+    (cd $SCRIPT_FOLDER_PATH && ./miniforge.sh)
+}
+
+# micromamba
+micromamba () {
+    add_local_bin_to_path
+    (cd $SCRIPT_FOLDER_PATH && ./micromamba.sh)
+}
+
 # Setting things in to place
 setup () {
     add_local_bin_to_path
@@ -107,6 +119,7 @@ all () {
     basictools
     vimconf
     python
+    miniforge
     docker
     java
     c
@@ -120,6 +133,7 @@ desktop () {
     vimconf
     basictools
     python
+    miniforge
     docker
     web
     ide
@@ -131,6 +145,7 @@ headless () {
     vimconf
     basictools
     python
+    micromamba
     docker
     web
 }
@@ -146,7 +161,9 @@ list () {
     echo "    - docker     : Docker installation and configuration"
     echo "    - ide        : Install Vscode"
     echo "    - java       : Open JDK, maven, gradle"
-    echo "    - python     : Python libraries"
+    echo "    - micromamba : Install Micromamba"
+    echo "    - miniforge  : Install Conda and Mamba through Miniforge3"
+    echo "    - python     : Python libraries, UV and Poetry"
     echo "    - setup      : Updates system, fetches repository."
     echo "                   Run this first if you downloaded install.sh file only"
     echo "    - vimconf    : Set .vimrc file. This will overwrite your .vimrc file."
@@ -156,9 +173,11 @@ list () {
     echo
     echo "    - all        : Installs everything"
     echo "    - desktop    : Installs desktop selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, ide and web."
+    echo "                   basictools, bashconf, vimconf, docker, python, miniforge"
+    echo "                   ide and web."
     echo "    - headless   : Installs headless selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, and web."
+    echo "                   basictools, bashconf, vimconf, docker, python, micromamba"
+    echo "                   and web."
 }
 
 if [[ "$#" -eq 0 ]]; then
@@ -195,6 +214,12 @@ do
             ;;
         "python")
             python
+            ;;
+        "miniforge")
+            miniforge
+            ;;
+        "micromamba")
+            micromamba
             ;;
         "web")
             web
