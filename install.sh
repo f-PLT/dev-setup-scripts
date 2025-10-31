@@ -49,7 +49,7 @@ c () {
 }
 
 # dockertools
-docker () {
+docker-deps () {
     (cd $SCRIPT_FOLDER_PATH && ./dockertools_config.sh)
 }
 
@@ -64,7 +64,7 @@ java () {
 }
 
 # pythontools
-python () {
+python-deps () {
     add_local_bin_to_path
     (cd $SCRIPT_FOLDER_PATH && ./pythontools_config.sh)
 }
@@ -118,25 +118,30 @@ all () {
     bashconf
     basictools
     vimconf
-    python
+    python-deps
     miniforge
-    docker
+    docker-deps
     java
     c
     web
     ide
 }
 
-desktop () {
+docker-dev () {
     setup
     bashconf
     vimconf
     basictools
-    python
-    miniforge
-    docker
-    web
-    ide
+    docker-deps
+}
+
+python-dev () {
+    setup
+    bashconf
+    vimconf
+    basictools
+    python-deps
+    micromamba
 }
 
 headless () {
@@ -144,40 +149,41 @@ headless () {
     bashconf
     vimconf
     basictools
-    python
-    micromamba
-    docker
+    python-deps
+    miniforge
+    docker-deps
     web
 }
 
 list () {
     echo " List of available configurations:"
     echo
-    echo "    - bashconf   : Set .bashrc file. This will overwrite your .bashrc file,"
-    echo "                   Run this first, as python and other configurations"
-    echo "                   will modify this file too"
-    echo "    - basictools : Basic packages and vim configuration."
-    echo "    - c          : C libraries"
-    echo "    - docker     : Docker installation and configuration"
-    echo "    - ide        : Install Vscode"
-    echo "    - java       : Open JDK, maven, gradle"
-    echo "    - micromamba : Install Micromamba"
-    echo "    - miniforge  : Install Conda and Mamba through Miniforge3"
-    echo "    - python     : Python libraries, UV and Poetry"
-    echo "    - setup      : Updates system, fetches repository."
-    echo "                   Run this first if you downloaded install.sh file only"
-    echo "    - vimconf    : Set .vimrc file. This will overwrite your .vimrc file."
-    echo "    - web        : NVM, Yarn and"
+    echo "    - bashconf     : Set .bashrc file. This will overwrite your .bashrc file,"
+    echo "                     Run this first, as python and other configurations"
+    echo "                     will modify this file too"
+    echo "    - basictools   : Basic packages and vim configuration."
+    echo "    - c            : C libraries"
+    echo "    - docker-deps  : Docker installation and configuration"
+    echo "    - ide          : Install Vscode"
+    echo "    - java         : Open JDK, maven, gradle"
+    echo "    - micromamba   : Install Micromamba"
+    echo "    - miniforge    : Install Conda and Mamba through Miniforge3"
+    echo "    - python-deps  : Python libraries, UV and Poetry"
+    echo "    - setup        : Updates system, fetches repository."
+    echo "                     Run this first if you downloaded install.sh file only"
+    echo "    - vimconf      : Set .vimrc file. This will overwrite your .vimrc file."
+    echo "    - web          : NVM, Yarn and"
     echo
     echo " Preset installation packages:"
     echo
-    echo "    - all        : Installs everything"
-    echo "    - desktop    : Installs desktop selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, miniforge"
-    echo "                   ide and web."
-    echo "    - headless   : Installs headless selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, micromamba"
-    echo "                   and web."
+    echo "    - all          : Installs everything"
+    echo "    - docker-dev   : Install docker selection:"
+    echo "                     basictools, bashconf, vimconf, docker"
+    echo "    - headless     : Installs headless selection:"
+    echo "                     basictools, bashconf, vimconf, docker, python, miniforge"
+    echo "                     and web."
+    echo "    - python-dev   : Installs basic python selection:"
+    echo "                     basictools, bashconf, vimconf, python, micromamba"
 }
 
 if [[ "$#" -eq 0 ]]; then
@@ -194,9 +200,6 @@ do
         "headless")
             headless
             ;;
-        "desktop")
-            desktop
-            ;;
         "setup")
             setup
             ;;
@@ -212,8 +215,11 @@ do
         "ide")
             ide
             ;;
-        "python")
-            python
+        "python-deps")
+            python-deps
+            ;;
+        "python-dev")
+            python-dev
             ;;
         "miniforge")
             miniforge
@@ -224,8 +230,11 @@ do
         "web")
             web
             ;;
-        "docker")
-            docker
+        "docker-deps")
+            docker-deps
+            ;;
+        "docker-dev")
+            docker-dev
             ;;
         "java")
             java

@@ -16,6 +16,8 @@ if [ $? != "0" ]; then
             ln -s ~/.miniforge3/condabin/conda ~/.local/bin/conda
             ln -s ~/.miniforge3/condabin/mamba ~/.local/bin/mamba
             /usr/bin/rm Miniforge3-$(uname)-$(uname -m).sh
+            ~/.local/bin/conda init
+            ~/.local/bin/mamba shell init --shell bash --root-prefix=~/.mamba
 
             echo "alias createEnv='conda create python=3.13 -n'" >> ~/.bashrc
             echo "alias createMambaEnv='mamba create python=3.13 -n'" >> ~/.bashrc
