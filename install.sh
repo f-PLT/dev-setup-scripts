@@ -127,16 +127,21 @@ all () {
     ide
 }
 
-desktop () {
+docker () {
+    setup
+    bashconf
+    vimconf
+    basictools
+    docker
+}
+
+python () {
     setup
     bashconf
     vimconf
     basictools
     python
-    miniforge
-    docker
-    web
-    ide
+    micromamba
 }
 
 headless () {
@@ -145,7 +150,7 @@ headless () {
     vimconf
     basictools
     python
-    micromamba
+    miniforge
     docker
     web
 }
@@ -172,12 +177,13 @@ list () {
     echo " Preset installation packages:"
     echo
     echo "    - all        : Installs everything"
-    echo "    - desktop    : Installs desktop selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, miniforge"
-    echo "                   ide and web."
+    echo "    - docker     : Install docker selection:"
+    echo "                   basictools, bashconf, vimconf, docker"
     echo "    - headless   : Installs headless selection:"
-    echo "                   basictools, bashconf, vimconf, docker, python, micromamba"
+    echo "                   basictools, bashconf, vimconf, docker, python, miniforge"
     echo "                   and web."
+    echo "    - python     : Installs basic python selection:"
+    echo "                   basictools, bashconf, vimconf, docker, python, micromamba"
 }
 
 if [[ "$#" -eq 0 ]]; then
@@ -193,9 +199,6 @@ do
             ;;
         "headless")
             headless
-            ;;
-        "desktop")
-            desktop
             ;;
         "setup")
             setup
